@@ -1,61 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lana's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lana | Social Media</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/favicon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9fafb;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f4f9;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card-portfolio {
+      background: white;
+      border-radius: 25px;
+      padding: 40px 20px 30px;
+      max-width: 400px;
+      width: 90%;
       text-align: center;
-      color: #333;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease forwards;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      padding: 2rem;
-    }
-    img {
-      width: 120px;
-      height: 120px;
+
+    .bg-circle {
+      position: absolute;
       border-radius: 50%;
-      object-fit: cover;
+      filter: blur(90px);
+      opacity: 0.3;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-top: 1rem;
+    .bg-circle.one { width: 200px; height: 200px; top: -60px; right: -60px; background: #ff6aa5; }
+    .bg-circle.two { width: 150px; height: 150px; bottom: -50px; left: -50px; background: #ffb7d3; }
+
+    .profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff6aa5; margin-bottom: 15px; }
+    h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; }
+    p.tagline { font-size: 1rem; color: #555; margin-bottom: 20px; }
+
+    .social-icons a {
+      color: #ff6aa5;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
     }
-    p {
-      font-size: 1rem;
-      color: #555;
-    }
-    a.button {
-      display: block;
-      background-color: #2563eb;
+    .social-icons a:hover { transform: scale(1.2); }
+
+    .btn-pink {
+      background-color: #ff6aa5;
       color: white;
-      text-decoration: none;
-      padding: 0.8rem 1rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: 50px;
+      padding: 10px 25px;
+      margin: 10px 5px;
+      font-weight: 600;
       transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
-    a.button:hover {
-      background-color: #1e40af;
+    .btn-pink:hover { background-color: #ff4c8b; }
+
+    /* Redesigned social stats like your friend */
+    .social-status-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 10px 0;
+      gap: 0;
+      font-size: 0.9rem;
+      color: #555;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .social-status-item {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+      padding: 0 10px;
+    }
+
+    /* Gray icons */
+    .social-status-item i {
+      color: #888888;
+    }
+
+    .social-status-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 24px;
+      background: rgba(0,0,0,0.15);
+    }
+
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    @media (max-width: 576px) {
+      .card-portfolio { padding: 30px 15px 20px; }
+      h1 { font-size: 1.5rem; }
+      .profile-pic { width: 100px; height: 100px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://via.placeholder.com/120" alt="Lana Profile Picture" />
-    <h1>Lana</h1>
-    <p>Entrepreneur | Aspiring Millionaire | Founder of Dearly Boutique</p>
-    <a class="button" href="https://www.facebook.com/rvlana.official" target="_blank">💬 Message Me on Facebook</a>
-    <a class="button" href="#">📚 My Portfolio</a>
-    <a class="button" href="#">👜 Dearly Boutique</a>
+  <div class="card-portfolio">
+    <div class="bg-circle one"></div>
+    <div class="bg-circle two"></div>
+    
+    <img src="image/pf.jpg" alt="Lana Profile" class="profile-pic">
+    <h1>Lana - ឡាណា</h1>
+    <p class="tagline">Content Creator • Entrepreneur</p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons mb-3">
+      <a href="https://www.facebook.com/rvlana.official" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/rvlana.official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@rvlana" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@teysama" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- Message Me Button -->
+    <div>
+      <a href="https://m.me/rvlana.official" target="_blank" class="btn btn-pink">Message Me</a>
+    </div>
+
+    <!-- Social Stats -->
+    <div class="social-status-container">
+      <div class="social-status-item">
+        <i class="fas fa-heart"></i>
+        <span>2.3k</span>
+      </div>
+      <div class="social-status-item">
+        <i class="fas fa-comment"></i>
+        <span>120</span>
+      </div>
+      <div class="social-status-item">
+        <i class="fas fa-share"></i>
+        <span>50</span>
+      </div>
+    </div>
+
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
